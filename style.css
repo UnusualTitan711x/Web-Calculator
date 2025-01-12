@@ -9,7 +9,24 @@
 }
 
 body{
-    background-color: purple;
+    background-color: #F5ECE6;
+    opacity: 1;
+    background-image:  repeating-linear-gradient(45deg, #8798A3 25%, transparent 25%, transparent 75%, #8798A3 75%, #8798A3), repeating-linear-gradient(45deg, #8798A3 25%, #F5ECE6 25%, #F5ECE6 75%, #8798A3 75%, #8798A3);
+    background-position: 0 0, 37px 37px;
+    background-size: 74px 74px;
+    animation: moveBackground 30s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0, 37px 37px;
+    } 
+    50% {
+        background-position: 37px 37px, 0 0;
+    } 
+    100% { 
+        background-position: 0 0, 37px 37px;
+    }
 }
 
 .container{
@@ -23,7 +40,7 @@ body{
     height: auto;
     width: auto;
     padding: 20px;
-    background-color: white;
+    background-color: #faf8ee;
     border-radius: 10px;
     box-shadow: 0 0 30px black;
 }
@@ -45,11 +62,18 @@ button{
     margin: 5px;
     border: 0;
     cursor: pointer;
+    background-color: #a8dadc;
+    border-radius: 5px;
+    color: white;
 }
 
 .calculator button#clear{
-    background-color: crimson;
+    background-color: #e63946;
     color: white;
+}
+
+.calculator button#equal{
+    background-color: #457b9d;
 }
 
 #zero button{
@@ -58,7 +82,11 @@ button{
 
 
 .calculator button.btn-operator{
-    background-color: black;
+    background-color: #162634;
     color: white;
+}
+
+button:hover, button.btn-operator:hover{
+    background-color: black;
 }
 
