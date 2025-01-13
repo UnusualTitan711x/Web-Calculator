@@ -1,7 +1,10 @@
 const display = document.querySelector('#display')
 const buttons = document.querySelectorAll('button')
+const explosions = document.querySelectorAll('#explosion')
 
 var bracketOpen = false
+var activateFirework = false
+//ActivateExplosions()
 
 buttons.forEach((item)=>{
     item.onclick = ()=>{
@@ -16,7 +19,12 @@ buttons.forEach((item)=>{
         else if (display.innerText != '' && item.id == 'equal'){
             var answer = eval(display.innerText)
             let string = String(answer)
-            display.innerText = string.substr(0, 13)
+            display.innerText = string
+
+            if (display.innerText == 2025){
+                ActivateExplosions()
+            }
+                
         }
         else if (display.innerText == '' && item.id == 'equal'){
             display.innerText == ''
@@ -36,3 +44,10 @@ buttons.forEach((item)=>{
         }
     }
 })
+
+function ActivateExplosions()
+{
+    explosions.forEach((item) => {
+        item.classList.add("active-explosion")
+    })
+}

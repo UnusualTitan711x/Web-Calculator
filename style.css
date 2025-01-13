@@ -42,18 +42,23 @@ body{
     padding: 20px;
     background-color: #faf8ee;
     border-radius: 10px;
-    box-shadow: 0 0 30px black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+    border: 5px solid #162634;
 }
 
 #display{
     height: 150px;
     width: auto;
-    max-width: 270px;
+    max-width: 280px;
+    padding: 10px;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
     font-size: 35px;
-    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    background-color: rgb(234, 254, 255);
+    border-radius: 5px;
+    border: 3px solid #162634;
 }
 
 button{
@@ -89,4 +94,173 @@ button{
 button:hover, button.btn-operator:hover{
     background-color: black;
 }
+
+.firework{
+    position: absolute;
+}
+
+.active-explosion{
+    position: absolute;
+    left: -2px;
+    bottom: 0;
+    width: 4px;
+    height: 80px;
+    transform-origin: 50% 100%;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    overflow: hidden;
+}
+
+.active-explosion:nth-child(1){
+    transform: rotate(0deg) translateY(-15px);
+}
+.active-explosion:nth-child(2){
+    transform: rotate(30deg) translateY(-15px);
+}
+.active-explosion:nth-child(3){
+    transform: rotate(60deg) translateY(-15px);
+}
+.active-explosion:nth-child(4){
+    transform: rotate(90deg) translateY(-15px);
+}
+.active-explosion:nth-child(5){
+    transform: rotate(120deg) translateY(-15px);
+}
+.active-explosion:nth-child(6){
+    transform: rotate(150deg) translateY(-15px);
+}
+.active-explosion:nth-child(7){
+    transform: rotate(180deg) translateY(-15px);
+}
+.active-explosion:nth-child(8){
+    transform: rotate(210deg) translateY(-15px);
+}
+.active-explosion:nth-child(9){
+    transform: rotate(240deg) translateY(-15px);
+}
+.active-explosion:nth-child(10){
+    transform: rotate(270deg) translateY(-15px);
+}
+.active-explosion:nth-child(11){
+    transform: rotate(300deg) translateY(-15px);
+}
+.active-explosion:nth-child(12){
+    transform: rotate(330deg) translateY(-15px);
+}
+
+.active-explosion::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 40px;
+    background-color: rgb(255, 187, 0);
+    animation: explosion 1s ease-in-out infinite;
+}
+
+@keyframes explosion {
+    0% {
+        top: 100%;
+    }    
+    33%, 100%{
+        top: -50%;
+    }
+}
+
+#firework1{
+    left: 10%;
+    top: 10%;
+    z-index: 5;
+    transform: scale(1);
+}
+
+#firework1 .active-explosion::before{
+    background-color: #e63946;
+    animation: explosion 2s ease-in-out infinite;
+}
+
+#firework2{
+    left: 25%;
+    top: 80%;
+    z-index: 5;
+    transform: scale(.75);
+}
+
+#firework2 .active-explosion::before{
+    background-color: aquamarine;
+    animation: explosion 2s .7s ease-in-out infinite;
+}
+
+#firework3{
+    left: 50%;
+    top: 20%;
+    z-index: 5;
+    transform: scale(.3);
+}
+
+#firework3 .active-explosion::before{
+    background-color: blue;
+    animation: explosion 2s .4s ease-in-out infinite;
+}
+
+#firework4{
+    left: 80%;
+    top: 90%;
+    z-index: 5;
+    transform: scale(.5);
+}
+
+#firework4 .active-explosion::before{
+    background-color: chocolate;
+    animation: explosion 2s .8s ease-in-out infinite;
+}
+
+#firework5{
+    left: 90%;
+    top: 30%;
+    z-index: 5;
+    transform: scale(.9);
+}
+
+#firework5 .active-explosion::before{
+    background-color: chartreuse;
+    animation: explosion 2s .1s ease-in-out infinite;
+}
+
+#firework6{
+    left: 60%;
+    top: 25%;
+    z-index: 5;
+    transform: scale(.6);
+}
+
+#firework6 .active-explosion::before{
+    background-color: rgb(255, 0, 255);
+    animation: explosion 2s .84s ease-in-out infinite;
+}
+
+#firework7{
+    left: 12%;
+    top: 95%;
+    z-index: 5;
+    transform: scale(.4);
+}
+
+#firework7 .active-explosion::before{
+    background-color: rgb(0, 255, 21);
+    animation: explosion 2s .25s ease-in-out infinite;
+}
+
+#firework8{
+    left: 5%;
+    top: 55%;
+    z-index: 5;
+    transform: scale(.9);
+}
+
+#firework8 .active-explosion::before{
+    background-color: rgb(255, 0, 204);
+    animation: explosion 2s 1.3s ease-in-out infinite;
+}
+
 
